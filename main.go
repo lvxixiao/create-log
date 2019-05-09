@@ -1,6 +1,8 @@
 package main
 
 import (
+	"crypto/md5"
+	"encoding/hex"
 	"flag"
 	"fmt"
 	"math/rand"
@@ -76,6 +78,11 @@ func makeLog(current, refer, ua string) string {
 	v.Set("url", current)
 	v.Set("refer", refer)
 	v.Set("ua", ua)
+	// 模拟生成uid
+	hasher := md5.New()
+	hasher.Write([]byte(refer + ua))
+	uid := hex.EncodeToString(hasher.Sum(nil))
+	v.Set("uid", uid)
 	paramsStr := v.Encode()
 
 	logoTemplate := `127.0.0.1 - - ${time} "OPTIONS /dig?${paramsStr} HTTP/1.1" 200 43 "-" "${ua}" "-"`
@@ -100,7 +107,7 @@ func main() {
 	var total = flag.Int("total", 100, "create log number")
 	var filePath = flag.String("filePath", "./log.txt", "file path")
 	flag.Parse() // 获得命令行参数
-	res := ruleResouce() 
+	res := ruleResouce()
 	list := buildURL(res)
 	var logStr string
 	for i := 0; i <= *total; i++ {
