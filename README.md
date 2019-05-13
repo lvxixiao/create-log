@@ -1,6 +1,6 @@
 # 说明
 
-自动创建日志，日志的如下
+自动创建日志，日志格式如下
 
 127.0.0.1 - - Mon May 13 14:49:04 +0800 CST 2019 "OPTIONS /dig?refer=http%3A%2F%2Flocalhost%3A8888%2Fmovie%2F9233&time=Mon+May+13+14%3A49%3A04+%2B0800+CST+2019&ua=Mozilla%2F5.0+%28Symbian%2F3%3B+Series60%2F5.2+NokiaN8-00%2F012.002%3B+Profile%2FMIDP-2.1+Configuration%2FCLDC-1.1+%29+AppleWebKit%2F533.4+%28KHTML%2C+like+Gecko%29+NokiaBrowser%2F7.3.0+Mobile+Safari%2F533.4+3gpp-gba&uid=27e932fc8373b439f232755dc9135380&url=http%3A%2F%2Flocalhost%3A8888%2Fmovie%2F9233 HTTP/1.1" 200 43 "-" "ua" "-"
 
